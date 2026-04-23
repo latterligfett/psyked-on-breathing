@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+:root {
+  --bg-base: #04070F;
+  --bg-card: #0A1628;
+  --bg-card-hover: #0F2140;
+  --accent: #00D4FF;
+  --accent-glow: rgba(0, 212, 255, 0.3);
+  --text-primary: #FFFFFF;
+  --text-secondary: #94A3B8;
+  
+  /* Protocol-specific colors */
+  --wake-up: #FFB347;
+  --wake-up-glow: rgba(255, 179, 71, 0.4);
+  --energy: #BFFF00;
+  --energy-glow: rgba(191, 255, 0, 0.3);
+  --decompression: #20B2AA;
+  --decompression-glow: rgba(32, 178, 170, 0.3);
+  --relaxation: #8B5CF6;
+  --relaxation-glow: rgba(139, 92, 246, 0.3);
+  --sleep: #4C1D95;
+  --sleep-glow: rgba(76, 29, 149, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Breathing circle animations */
+@keyframes breatheIn {
+  0% { transform: scale(0.6); }
+  100% { transform: scale(1); }
+}
+
+@keyframes breatheOut {
+  0% { transform: scale(1); }
+  100% { transform: scale(0.6); }
+}
+
+@keyframes breatheHold {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+@keyframes glow {
+  0%, 100% { filter: blur(40px) brightness(1); }
+  50% { filter: blur(50px) brightness(1.2); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.breathe-circle {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.breathe-circle.inhaling {
+  animation: breatheIn var(--inhale-duration, 4s) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.breathe-circle.exhaling {
+  animation: breatheOut var(--exhale-duration, 4s) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.breathe-circle.holding {
+  animation: breatheHold 0.5s ease-in-out infinite;
+}
+
+/* Card hover effects */
+.protocol-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.protocol-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Glass morphism */
+.glass {
+  background: rgba(10, 22, 40, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Glow effects */
+.glow-accent {
+  box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.glow-wake-up {
+  box-shadow: 0 0 40px var(--wake-up-glow);
+}
+
+.glow-energy {
+  box-shadow: 0 0 40px var(--energy-glow);
+}
+
+.glow-decompression {
+  box-shadow: 0 0 40px var(--decompression-glow);
+}
+
+.glow-relaxation {
+  box-shadow: 0 0 40px var(--relaxation-glow);
+}
+
+.glow-sleep {
+  box-shadow: 0 0 40px var(--sleep-glow);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+/* Responsive grid */
+@media (max-width: 640px) {
+  .protocol-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .protocol-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .protocol-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Landscape phone */
+@media (max-height: 500px) and (orientation: landscape) {
+  .protocol-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+  .protocol-card {
+    padding: 1rem;
+  }
+}
