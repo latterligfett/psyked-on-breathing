@@ -35,7 +35,7 @@ export default function HomePage() {
           Psyked on Breathing
         </h1>
         <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-md mx-auto">
-          Velg din pusteprotokoll og la deg guide til indre ro
+          Choose your breathing protocol and let yourself be guided to inner peace
         </p>
       </header>
 
@@ -61,7 +61,7 @@ export default function HomePage() {
                 className="text-xl md:text-2xl font-bold mb-1"
                 style={{ fontFamily: 'var(--font-space-grotesk)', color: protocol.color }}
               >
-                {protocol.norwegianTitle}
+                {protocol.title}
               </h2>
               <p className="text-sm text-[var(--text-secondary)] mb-3">
                 {protocol.englishSubtitle}
@@ -89,7 +89,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="mt-12 text-center text-sm text-[var(--text-secondary)] relative z-10">
-        <p>Ta et dypt pust. Slapp av. Du er i trygge hender.</p>
+        <p>Take a deep breath. Relax. You are in good hands.</p>
       </footer>
     </main>
   );

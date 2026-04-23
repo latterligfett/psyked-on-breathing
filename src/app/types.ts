@@ -19,7 +19,7 @@ export interface BreathingPattern {
 
 export interface Protocol {
   id: ProtocolId;
-  norwegianTitle: string;
+  title: string;
   englishSubtitle: string;
   emoji: string;
   description: string;
@@ -33,7 +33,7 @@ export interface Protocol {
 export const PROTOCOLS: Record<ProtocolId, Protocol> = {
   oppvåkning: {
     id: 'oppvåkning',
-    norwegianTitle: 'Oppvåkning',
+    title: 'Wake Up',
     englishSubtitle: 'Wake Up',
     emoji: '🌅',
     description: 'Energizing morning breathing to start your day with vitality',
@@ -50,7 +50,7 @@ export const PROTOCOLS: Record<ProtocolId, Protocol> = {
   },
   energihenting: {
     id: 'energihenting',
-    norwegianTitle: 'Energihenting',
+    title: 'Energy Boost',
     englishSubtitle: 'Energy Boost',
     emoji: '⚡',
     description: 'Quick energy lift when you need an instant boost',
@@ -67,7 +67,7 @@ export const PROTOCOLS: Record<ProtocolId, Protocol> = {
   },
   avspenning: {
     id: 'avspenning',
-    norwegianTitle: 'Avspenning',
+    title: 'Decompression',
     englishSubtitle: 'Decompression',
     emoji: '🌿',
     description: 'Stress relief breathing after a long day',
@@ -84,7 +84,7 @@ export const PROTOCOLS: Record<ProtocolId, Protocol> = {
   },
   avslapning: {
     id: 'avslapning',
-    norwegianTitle: 'Avslapning',
+    title: 'Relaxation',
     englishSubtitle: 'Relaxation',
     emoji: '🧘',
     description: 'Deep relaxation for calm and inner peace',
@@ -101,7 +101,7 @@ export const PROTOCOLS: Record<ProtocolId, Protocol> = {
   },
   søvnforberedelse: {
     id: 'søvnforberedelse',
-    norwegianTitle: 'Søvnforberedelse',
+    title: 'Sleep Prep',
     englishSubtitle: 'Sleep Prep',
     emoji: '🌙',
     description: 'Calming breathing to prepare for restful sleep',

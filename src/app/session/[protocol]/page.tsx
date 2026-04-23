@@ -181,7 +181,7 @@ export default function SessionPage({ params }: { params: Promise<{ protocol: st
         onClick={stopSession}
         className="absolute top-4 left-4 md:top-8 md:left-8 z-20 px-4 py-2 rounded-xl glass text-sm font-medium hover:bg-[var(--bg-card-hover)] transition-colors"
       >
-        ← Tilbake
+        ← Back
       </button>
       
       {/* Session content */}
@@ -221,7 +221,7 @@ export default function SessionPage({ params }: { params: Promise<{ protocol: st
               className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg"
               style={{ fontFamily: 'var(--font-space-grotesk)' }}
             >
-              {PHASE_LABELS[phase].no}
+              {PHASE_LABELS[phase].en}
             </span>
             <span className="text-sm text-white/70 mt-2">
               {Math.ceil(phaseTime)}s
@@ -239,7 +239,7 @@ export default function SessionPage({ params }: { params: Promise<{ protocol: st
         {/* Progress */}
         <div className="w-64 md:w-80 mb-8">
           <div className="flex justify-between text-sm text-[var(--text-secondary)] mb-2">
-            <span>Pust {breathCount} av {totalBreaths}</span>
+            <span>Breath {breathCount} of {totalBreaths}</span>
             <span>{Math.round(progress)}%</span>
           </div>
           <div className="h-2 rounded-full bg-[var(--bg-card)] overflow-hidden">
@@ -264,7 +264,7 @@ export default function SessionPage({ params }: { params: Promise<{ protocol: st
               boxShadow: `0 0 30px ${protocol.color}66`,
             }}
           >
-            Start Økt
+            Start Session
           </button>
         )}
         
@@ -273,7 +273,7 @@ export default function SessionPage({ params }: { params: Promise<{ protocol: st
             onClick={stopSession}
             className="py-3 px-8 rounded-xl text-base font-medium glass hover:bg-[var(--bg-card-hover)] transition-colors"
           >
-            Avslutt
+            End
           </button>
         )}
         
@@ -286,17 +286,17 @@ export default function SessionPage({ params }: { params: Promise<{ protocol: st
                 className="text-2xl font-bold mb-2"
                 style={{ fontFamily: 'var(--font-space-grotesk)', color: protocol.color }}
               >
-                Fantastisk!
+                Amazing!
               </h2>
               <p className="text-[var(--text-secondary)]">
-                Du fullførte økten
+                You completed the session
               </p>
             </div>
             <button
               onClick={() => router.push('/')}
               className="py-3 px-8 rounded-xl text-base font-medium glass hover:bg-[var(--bg-card-hover)] transition-colors"
             >
-              Tilbake til forsiden
+              Back to home
             </button>
           </div>
         )}
