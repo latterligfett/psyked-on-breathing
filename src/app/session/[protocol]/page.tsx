@@ -193,7 +193,7 @@ export default function SessionPage({ params }: { params: Promise<{ protocol: st
             className="text-2xl md:text-3xl font-bold"
             style={{ fontFamily: 'var(--font-space-grotesk)', color: protocol.color }}
           >
-            {protocol.norwegianTitle}
+            {protocol.title}
           </h1>
         </div>
         
